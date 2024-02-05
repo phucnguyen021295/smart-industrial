@@ -8,11 +8,11 @@ import { useRouter } from 'next/navigation'
 import { getToken } from '@/tsipframework/tsip-module-auths/selectors/authSelector'
 
 function Start() {
-    const token = useSelector(state => state.auth.token);
+    const token = useSelector(getToken);
     const router = useRouter()
+    debugger;
 
     useEffect(() => {
-        debugger;
         if (token) {
             router.push('/home', { scroll: false })
         } else {

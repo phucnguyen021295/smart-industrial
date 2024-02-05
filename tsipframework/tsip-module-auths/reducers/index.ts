@@ -10,7 +10,6 @@ export const authSlide = createSlice({
     initialState,
     reducers: {
         update: (state, action: PayloadAction<object>) => {
-            debugger;
             return {...state, ...action.payload}
         },
         logout: (state) => {

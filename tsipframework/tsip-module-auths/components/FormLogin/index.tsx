@@ -1,10 +1,12 @@
 'use client'
 import React from "react";
-
 import { Button, Checkbox, Form, Grid, Input, theme, Typography } from "antd";
 import { useRouter } from 'next/navigation'
-
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+
+// Actions
+import { update } from '@/tsipframework/tsip-module-auths/reducers'
 
 const { useToken } = theme;
 const { useBreakpoint } = Grid;
@@ -12,12 +14,14 @@ const { Text, Title, Link } = Typography;
 
 function FormLogin() {
   const { token } = useToken();
-  const router = useRouter()
+  const dispatch = useDispatch()
+  const router = useRouter();
 
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    dispatch(update({token: 'token'}))
 
-    router.push('/home', { scroll: false })
+    router.push('/start', { scroll: false })
   };
 
   const styles = {
