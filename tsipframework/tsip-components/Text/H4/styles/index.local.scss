@@ -1,0 +1,5 @@
+@import '../../../../../tsipframework/tsip-global/assets/fonts/typography.scss';
+
+h4 {
+  @include HeaderH4();
+}
