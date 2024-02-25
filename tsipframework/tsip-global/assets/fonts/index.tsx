@@ -1,28 +1,54 @@
+import { NextFont } from 'next/dist/compiled/@next/font'
 import localFont from 'next/font/local'
 
-const saira = localFont({
+const saira: NextFont = localFont({
     src: [
       {
-        path: './Saira-Regular.woff',
+        path: './saira/Saira-Regular.woff',
         weight: '400',
         style: 'normal',
       },
       {
-        path: './Saira-SemiBold.woff',
+        path: './saira/Saira-SemiBold.woff',
         weight: '500',
         style: 'normal',
       },
       {
-        path: './Saira-Medium.woff',
+        path: './saira/Saira-Medium.woff',
         weight: '600',
         style: 'normal',
       },
       {
-        path: './Saira-Bold.woff',
+        path: './saira/Saira-Bold.woff',
         weight: '700',
         style: 'normal',
       },
     ],
   })
 
-  export {saira}
+  const tomorrow: NextFont = localFont({
+    src: [
+      {
+        path: './tomorrow/Tomorrow-Regular.ttf',
+        weight: '400',
+        style: 'normal',
+      },
+      {
+        path: './tomorrow/Tomorrow-SemiBold.ttf',
+        weight: '500',
+        style: 'normal',
+      },
+      {
+        path: './tomorrow/Tomorrow-Medium.ttf',
+        weight: '600',
+        style: 'normal',
+      },
+      {
+        path: './tomorrow/Tomorrow-Bold.ttf',
+        weight: '700',
+        style: 'normal',
+      },
+    ],
+  })
+
+  export {saira, tomorrow}

@@ -10,7 +10,6 @@ import { getToken } from '@/tsipframework/tsip-module-auths/selectors/authSelect
 function Start() {
     const token = useSelector(getToken);
     const router = useRouter()
-    debugger;
 
     useEffect(() => {
         if (token) {

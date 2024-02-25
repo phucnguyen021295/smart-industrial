@@ -1,4 +1,4 @@
-import FormLogin from '@/tsipframework/tsip-module-auths/components/FormLogin'
+import FormLogin from '@/ts-module-auth/components/FormLogin'
 
 function Login() {
     return (

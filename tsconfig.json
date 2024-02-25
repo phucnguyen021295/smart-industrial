@@ -18,7 +18,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/ts-base/*": ["./tsipframework/tsip-base/*"],
+      "@/ts-components/*": ["./tsipframework/tsip-components/*"],
+      "@/ts-global/*": ["./tsipframework/tsip-global/*"],
+      "@/ts-module-auth/*": ["./tsipframework/tsip-module-auths/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
