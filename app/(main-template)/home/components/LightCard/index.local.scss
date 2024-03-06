@@ -1,0 +1,22 @@
+
+@import '../../../../../tsipframework/tsip-global/assets/fonts/typography.scss';
+.ts-home-light {
+    &-content {
+        padding-left: 12px;
+        &-subText {
+            @include Small-SemiBold();
+            color: var(--text-secondary-color);
+        }
+        &-driver {
+            height: 12px;
+        }
+        &-address {
+            @include Small-Bold();
+        }
+
+        &-number {
+            @include Normal-Bold();
+            color: var(--main-color)
+        }
+    }
+}

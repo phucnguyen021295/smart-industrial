@@ -1,0 +1,47 @@
+@import '../../tsip-global/assets/fonts/typography.scss';
+
+.t-sip-components-card {
+    width: 22.4vw;
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(3, 58, 143, .63);
+    border-left: 1px solid rgba(3, 58, 143, .63);
+    border-right: 1px solid rgba(3, 58, 143, .63);
+
+    .ant-card-head {
+        padding: 0 !important;
+        border-bottom: 0 !important;
+        min-height: auto !important;
+        background: linear-gradient(98.86deg, rgba(48, 65, 78, 0.6) 6.74%, rgba(6, 27, 43, 0.2) 93.26%) !important;
+    }
+
+    &-header {
+        display: flex;
+        position: relative;
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+        &-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 0;
+
+            > span {
+                padding-left: 1.04vw;
+                color: #fff;
+                @include Normal-Bold()
+            }
+        }
+    }
+
+    .ant-card-body {
+        padding: 1.04vw !important;
+        background-image: url('./images/borderBottom.svg'), url('./images//borderLeft.svg'), url('./images/borderRight.svg');
+        background-position: center bottom, top left, top right;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background: linear-gradient(98.86deg, rgba(48, 65, 78, 0.6) 6.74%, rgba(6, 27, 43, 0.2) 93.26%);
+    }
+}

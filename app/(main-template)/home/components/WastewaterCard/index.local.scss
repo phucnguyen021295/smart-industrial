@@ -1,0 +1,20 @@
+
+@import '../../../../../tsipframework/tsip-global/assets/fonts/typography.scss';
+.ts-home-waste-water {
+    &-content {
+        &-subText {
+            @include Small-SemiBold();
+        }
+        &-driver {
+            height: 12px;
+        }
+        &-address {
+            @include Small-Bold();
+        }
+
+        &-number {
+            @include Huge-Bold();
+            color: var(--main-color);
+        }
+    }
+}

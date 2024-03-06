@@ -19,14 +19,14 @@ const items: MenuItemProps[] = [
     link: '/home',
   },
   {
-    label: 'CCTV',
-    key: 'cctv',
-    link: '/cctv',
-  },
-  {
     label: 'Xử lý',
     key: 'process',
     link: '/process',
+  },
+  {
+    label: 'CCTV',
+    key: 'cctv',
+    link: '/cctv',
   },
   {
     label: 'Khác',

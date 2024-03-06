@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { ConfigProvider } from "antd";
 
 // Stores
 import { ProviderRedux } from "@/ts-base/reducers/providers";
@@ -22,9 +23,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={saira.className}>
         <AntdRegistry>
-          <ProviderRedux>
-            {children}
-          </ProviderRedux>
+          <ConfigProvider
+            theme={{
+              token: {
+                fontFamily:  `${saira.style.fontFamily}`
+              }
+            }}
+          >
+            <ProviderRedux>
+              {children}
+            </ProviderRedux>
+          </ConfigProvider>  
         </AntdRegistry>
       </body>
     </html>

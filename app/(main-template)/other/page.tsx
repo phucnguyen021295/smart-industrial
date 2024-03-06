@@ -1,17 +1,11 @@
-import Image from "next/image";
-import { Layout, Button } from 'antd';
+import {memo} from 'react';
 
-const { Header, Footer, Sider, Content } = Layout;
-
-export default function CCTV() {
+function Other() {
   return (
     <main>
-      <div>Hello CCTV</div>
-      {/* <Layout style={layoutStyle}>
-        <Header style={headerStyle}>Header</Header>
-        <Content style={contentStyle}>Content</Content>
-        <Footer style={footerStyle}>Footer</Footer>
-    </Layout> */}
+      <div>Hello Other</div>
     </main>
   );
 }
+
+export default memo(Other)

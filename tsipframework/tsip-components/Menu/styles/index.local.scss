@@ -30,6 +30,7 @@
     &-item-active, &-item:hover {
         background-image: url('./images/buttonActive.png'); /* Đường dẫn đến hình ảnh */
         background-repeat: no-repeat;
+        background-size: cover;
 
         a {
             color: #FFFDEE;

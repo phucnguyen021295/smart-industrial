@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react'
 import './styles/index.local.scss';
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
     children: ReactNode;
+    testId?: string;
 }
 
 function H4(props: Props) {

@@ -1,0 +1,78 @@
+@import '../../../../../tsipframework/tsip-global/assets/fonts/typography.scss';
+
+.ts-home-eventDay {
+    &-chart {
+        width: 8vw;
+        height: auto;
+    }
+    svg {
+        padding-right: 12px;
+    }
+    &-right {
+        width: 11.15vw;
+        &-top {
+            position: relative;
+            display: flex;
+            &-img-label {
+                width: 11.15vw;
+                height: auto;
+            }
+            &-content {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                &-number {
+                    padding-left: 1.25vw;
+                    padding-bottom: 4px;
+                    h3 {
+                        color: var(--orange-color);
+                        padding-right: 1.042vw;
+                    }
+                    span {
+                        color: var(--text-secondary-color);
+                    }
+                }
+            }
+            &-icon-star {
+                width: 1.25vw;
+                height: auto;
+                margin-left: 1.042vw;
+            }
+        }
+
+        &-bottom {
+            position: relative;
+            display: flex;
+            &-img-label {
+                width: 11.15vw;
+                height: auto;
+                transform: rotate(180deg);
+            }
+            &-content {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                &-number {
+                    padding-left: 1.042vw;
+                    padding-top: 6px;
+                    h3 {
+                        padding-left: 1.042vw;
+                        color: var(--text-color);
+                    }
+                    span {
+                        color: var(--text-secondary-color);
+                    }
+                }
+            }
+            &-icon-star {
+                width: 1.25vw;
+                height: auto;
+                margin-right: 1.042vw;
+            }
+        }
+    }
+}

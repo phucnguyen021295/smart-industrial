@@ -12,11 +12,11 @@ interface Props extends ButtonProps {
 };
 
 export default function ButtonBase(props: Props) {
-    const {children} = props;
+    const {children, ...otherProps} = props;
 
     return (
         <ConfigProvider theme={themeConfig}>
-            <Button type="primary">{children}</Button>
+            <Button {...otherProps}>{children}</Button>
         </ConfigProvider>    
     );
 }

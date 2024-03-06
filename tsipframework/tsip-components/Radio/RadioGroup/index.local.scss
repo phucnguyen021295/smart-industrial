@@ -1,0 +1,30 @@
+.ts-components-radio-button {
+    .ant-radio-button-wrapper {
+        border-width: 0;
+    }
+    .ant-radio-button-wrapper:first-child {
+        border-inline-start-width: 0;
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
+    }
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled), .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child, .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+        border-color: transparent;
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
+    }
+
+    .ant-radio-button-wrapper:last-child {
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+    }
+
+    .ant-radio-button-wrapper:not(:first-child)::before {
+        width: 0;
+    }
+
+    > label > span {
+        font-weight: 400;
+    }
+}

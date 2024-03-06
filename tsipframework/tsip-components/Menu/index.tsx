@@ -18,10 +18,10 @@ export interface MenuItemProps {
 };
 
 const MenuItem = React.memo(function MenuItem(props: MenuItemProps) {
-    const {label, link, key, isSelected} = props;
+    const {label, link, isSelected} = props;
 
     return (
-        <div key={key} className={`t-sip-components-menu-item${isSelected ? ' t-sip-components-menu-item-active' : ''}`}>
+        <div className={`t-sip-components-menu-item${isSelected ? ' t-sip-components-menu-item-active' : ''}`}>
             <Image
                 src={require('./styles/images/button.png')}
                 alt="btn"
@@ -44,7 +44,7 @@ export default function Menu(props: MenuProps) {
   return (
     <Flex align={'center'}>
         {
-            items.map((item) => <MenuItem key={item.key} link={item.link} isSelected={pathname === item.link} label={item.label} />)
+            items.map((item) => <MenuItem key={item.key} link={item.link} isSelected={pathname.includes(item.link)} label={item.label} />)
         }
     </Flex>
   )
