@@ -81,8 +81,10 @@ class Scada extends PureComponent<Props, {}> {
   }
 
   componentDidMount(): void {
-    document.body.appendChild(getScript("./scada/gunzip.min.js"));
-    this.initialization();
+    document.body.appendChild(getScript("../../../gunzip.min.js"));
+    setTimeout(()=> {
+      this.initialization();
+    }, 1000)
   }
 
   initialization = () => {
@@ -224,12 +226,12 @@ class Scada extends PureComponent<Props, {}> {
       used for integrated chart scrolling. For each loaded scrollbar, the 
       AssetLoaded callback is invoked with the supplied data.
     */
-    this.GLG.LoadWidgetFromURL("scada/scrollbar_h.g", null, this.AssetLoaded, {
+    this.GLG.LoadWidgetFromURL("../scrollbar_h.g", null, this.AssetLoaded, {
       name: "scrollbar_h",
       callback: callback,
       user_data: user_data,
     });
-    this.GLG.LoadWidgetFromURL("scada/scrollbar_v.g", null, this.AssetLoaded, {
+    this.GLG.LoadWidgetFromURL("../scrollbar_v.g", null, this.AssetLoaded, {
       name: "scrollbar_v",
       callback: callback,
       user_data: user_data,

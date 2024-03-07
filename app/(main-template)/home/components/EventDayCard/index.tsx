@@ -39,9 +39,7 @@ function EventDayCard() {
         <Card
             className="ts-home-eventDay"
             title={'Sự kiện an ninh trong ngày'}
-            extra={
-                <Button type='text'><Icon name="dots-horizontal" size={'huge'} /></Button>
-            }
+            extra={<Button type='text'><Icon name="dots-horizontal" size={'huge'} /></Button>}
         >
             <Flex justify="space-between" align="center">
                 <div className="ts-home-eventDay-chart">

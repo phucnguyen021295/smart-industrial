@@ -1,6 +1,7 @@
-import React from "react";
+import { SVGProps, memo } from "react";
 
-function Icon() {
+function Icon(props: SVGProps<SVGSVGElement>) {
+  const { color = "#E71D36", ...otherProps } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +10,7 @@ function Icon() {
       height="24"
       fill="none"
       viewBox="0 0 24 24"
+      {...otherProps}
     >
       <path fill="url(#pattern0)" d="M0 0H24V24H0z"></path>
       <defs>
@@ -31,4 +33,4 @@ function Icon() {
   );
 }
 
-export default React.memo(Icon);
+export default memo(Icon);

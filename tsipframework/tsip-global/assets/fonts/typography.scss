@@ -34,6 +34,32 @@
     line-height: var(--line-height-heading6);
 }
 
+// ======================Font-Size-Tiny
+@mixin Tiny {
+    font-weight: 400;
+    font-size: var(--font-size-tiny);
+    line-height: var(--line-height-tiny);
+}
+
+@mixin Tiny-SemiBold {
+    font-weight: 500;
+    font-size: var(--font-size-tiny);
+    line-height: var(--line-height-tiny);
+}
+
+@mixin Tiny-Medium {
+    font-weight: 600;
+    font-size: var(--font-size-tiny);
+    line-height: var(--line-height-tiny);
+}
+
+@mixin Tiny-Bold {
+    font-weight: 700;
+    font-size: var(--font-size-tiny);
+    line-height: var(--line-height-tiny);
+}
+// =======================================
+
 // ======================Font-Size-Small
 @mixin Small {
     font-weight: 400;

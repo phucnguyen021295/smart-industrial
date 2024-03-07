@@ -19,12 +19,9 @@ const MapGeo = dynamic(() => import('@/app/(main-template)/home/components/MapGe
 const Card = dynamic(() => import('@/ts-components/Card'));
 const { Sider, Content } = Layout;
 
-// Styles
-import './page.local.scss';
-
 function Home() {
   return (
-    <Layout className="ts-home-main" style={{background: 'transparent', minHeight: '91vh'}}>
+    <Layout style={{background: 'transparent', minHeight: '91vh'}}>
         <Sider width={'23.7vw'} style={{paddingLeft: '1.25vw', background: 'transparent'}}>
           <Space direction="vertical" size={8} style={{ display: 'flex' }}>
               <EventDayCard />

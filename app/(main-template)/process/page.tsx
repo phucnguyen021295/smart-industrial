@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 
 // Components
 const ProcessedCard = dynamic(() => import('@/app/(main-template)/process/components/ProcessedCard'));
-const Scada = dynamic(() => import('@/app/(main-template)/process/components/Scada'));
+const Scada = dynamic(() => import('@/app/(main-template)/home/scada/components/Scada'));
 
 const { Sider, Content } = Layout;
 

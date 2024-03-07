@@ -131,8 +131,8 @@ class Scada extends PureComponent<Props, {}> {
   }
 
   componentDidMount(): void {
-    document.body.appendChild(getScript("./scada/gunzip.min.js"));
-    document.body.appendChild(getScript("./scada/fullscreen.js"));
+    document.body.appendChild(getScript("../gunzip.min.js"));
+    // document.body.appendChild(getScript("../fullscreen.js"));
     this.initialization()
   }
 
@@ -289,9 +289,9 @@ class Scada extends PureComponent<Props, {}> {
       used for integrated chart scrolling. For each loaded scrollbar, the 
       AssetLoaded callback is invoked with the supplied data.
     */
-    this.GLG.LoadWidgetFromURL("scrollbar_h.g", null, this.AssetLoaded,
+    this.GLG.LoadWidgetFromURL("../scrollbar_h.g", null, this.AssetLoaded,
       { name: "scrollbar_h", callback: callback });
-    this.GLG.LoadWidgetFromURL("scrollbar_v.g", null, this.AssetLoaded,
+    this.GLG.LoadWidgetFromURL("../scrollbar_v.g", null, this.AssetLoaded,
       { name: "scrollbar_v", callback: callback });
   }
 
@@ -303,7 +303,6 @@ class Scada extends PureComponent<Props, {}> {
     */
     this.GLG.LoadWidgetFromURL(urlFile, null, this.LoadCB, null);
   }
-
 
   //////////////////////////////////////////////////////////////////////////////
   LoadCB = (drawing: any, data: any, path: string) => {

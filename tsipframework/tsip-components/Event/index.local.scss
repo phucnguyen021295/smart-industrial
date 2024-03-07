@@ -1,0 +1,33 @@
+@import '../../tsip-global/assets/fonts/typography.scss';
+.ts-components-event {
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    padding: 0 8px!important;
+    margin: 8px 0;
+
+    &-error {
+        background: rgba(231, 29, 54, 0.2);
+        background-image: url('./images/redalert.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &-warning {
+        background: rgba(255, 159, 28, 0.2);
+        background-image: url('./images/yellowalert.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &-img {
+        width: 100%;
+        height: auto
+    }
+    &-title {
+        padding-left: 8px;
+        @include Normal-SemiBold()
+    }
+    &-date {
+        @include Small-SemiBold();
+        color: rgba(166, 166, 166, 1);
+    }
+}

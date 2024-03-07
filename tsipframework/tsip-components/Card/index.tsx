@@ -1,4 +1,7 @@
 'use client'
+
+import merge from "lodash/merge";
+import { memo } from "react";
 import Image from "next/image";
 import { Card, CardProps, ConfigProvider, Flex } from 'antd';
 
@@ -32,12 +35,21 @@ interface Props extends CardProps {
     title: string;
     extra?: React.ReactNode;
     children: React.ReactNode;
+    paddingBody?: number | string;
 }
 
-export default function CardBase(props: Props) {
-    const {title, extra, children} = props;
+function CardBase(props: Props) {
+    const {title, extra, children, paddingBody = '1.04vw'} = props;
+
+    const paddingBodyConfig = {
+        token: {
+            paddingLG: paddingBody,
+            padding: paddingBody
+        }
+    }
+
     return (
-        <ConfigProvider theme={themeConfig}>
+        <ConfigProvider theme={merge(themeConfig, paddingBodyConfig)}>
             <Card
                 className="t-sip-components-card"
                 title={<CardTitle title={title} extra={extra} />}
@@ -48,3 +60,5 @@ export default function CardBase(props: Props) {
         </ConfigProvider>
     );
 }
+
+export default memo(CardBase)

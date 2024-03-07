@@ -9,7 +9,7 @@ const themeConfig: ThemeConfig = {
     },
     token: {
         colorText: color.textColor,
-        borderRadiusLG: 0
+        borderRadiusLG: 0,
     }
 };
 

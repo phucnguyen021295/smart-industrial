@@ -4,8 +4,8 @@ import React from 'react';
 import {ButtonProps, Button, ConfigProvider} from 'antd';
 
 // Styles
-import themeConfig from './styles/themeConfig';
-import './styles/index.local.scss';
+import themeConfig from './themeConfig';
+import './index.local.scss';
 
 interface Props extends ButtonProps {
     children: React.ReactNode

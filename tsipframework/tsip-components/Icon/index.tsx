@@ -9,6 +9,8 @@ const Icons = {
     ['synchronized']: dynamic(() => import('./images/synchronized')),
     ['filter']: dynamic(() => import('./images/filter')),
     ['warning']: dynamic(() => import('./images/warning')),
+    ['event1']: dynamic(() => import('./images/event1')),
+    ['radio']: dynamic(() => import('./images/radio')),
 };
 
 const SIZE = {
