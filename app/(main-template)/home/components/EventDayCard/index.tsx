@@ -3,17 +3,19 @@
 import React from 'react';
 import Image from "next/image";
 import { Space, Flex } from 'antd';
+import dynamic from 'next/dynamic';
 
 // Components
 import Card from '@/ts-components/Card';
 import { H3 } from "@/ts-components/Text";
 import Icon from "@/ts-components/Icon";
-import {PieChart} from "@/ts-components/Chart";
+const PieChart = dynamic(() => import('@/ts-components/Chart/PieChart'));
 import Button from "@/ts-components/Button";
 
 // Styles
 import './index.local.scss';
 import { tomorrow } from "@/ts-global/assets/fonts";
+
 
 function EventDayCard() {
     const data = [

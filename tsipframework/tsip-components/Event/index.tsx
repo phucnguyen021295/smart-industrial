@@ -1,4 +1,6 @@
-import { ConfigProvider, Flex, List } from 'antd';
+'use-client'
+
+import { Flex, List } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import moment from 'moment';
 
@@ -13,16 +15,6 @@ interface Props {
     status: 1 | 2,
     title: string
  };
-
-export function Event(props: Props) {
-    const { date, title, status} = props
-
-    return (
-        <Flex align='center' justify='space-between' className={`ts-components-event ${status === 2 ? 'ts-components-event-error' : 'ts-components-event-warning'}`}>
-            
-        </Flex>
-    );
-}
 
 interface ListProps {
     key: string,
@@ -41,34 +33,24 @@ export default function ListEvent(props: ListProps) {
     };
 
     return (
-        <ConfigProvider
-            theme={{
-                components: {
-                    List: {
-                        itemPadding: '8px 0'
-                    },
-                    },
-            }}
-        >
-            <List>
-                <VirtualList
-                    data={data}
-                    height={heightList}
-                    itemHeight={40}
-                    itemKey={key}
-                    onScroll={onScroll}
-                >
-                    {(item: Props) => (
-                        <List.Item key={key} className={`ts-components-event ${item.status === 2 ? 'ts-components-event-error' : 'ts-components-event-warning'}`}>
-                            <Flex align='center'>
-                                <Icon name='warning' color={item.status === 2 ? 'rgba(231, 29, 54, 1)' : 'rgba(255, 159, 28, 1)'} />
-                                <span className={'ts-components-event-title'}>{item.title}</span>
-                            </Flex>
-                            <span className={'ts-components-event-date'}>{moment(item.date).format('HH:mm:ss - DD/MM/YYYY')}</span>
-                        </List.Item>
-                    )}
-                </VirtualList>
-            </List>
-        </ConfigProvider>
+        <List>
+            <VirtualList
+                data={data}
+                height={heightList}
+                itemHeight={40}
+                itemKey={key}
+                onScroll={onScroll}
+            >
+                {(item: Props) => (
+                    <List.Item key={key} className={`ts-components-event ${item.status === 2 ? 'ts-components-event-error' : 'ts-components-event-warning'}`}>
+                        <Flex align='center' flex={1}>
+                            <Icon name='warning' color={item.status === 2 ? 'rgba(231, 29, 54, 1)' : 'rgba(255, 159, 28, 1)'} />
+                            <span className={'ts-components-event-title'}>{item.title}</span>
+                        </Flex>
+                        <span className={'ts-components-event-date'}>{moment(item.date).format('HH:mm:ss - DD/MM/YYYY')}</span>
+                    </List.Item>
+                )}
+            </VirtualList>
+        </List>
     );
 }

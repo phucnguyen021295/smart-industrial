@@ -1,3 +1,15 @@
 .ts-components-chart-legend {
-    
+    &-dot {
+        height: 4px;
+        width: 4px;
+        border-radius: 2px;
+    }
+    .ant-list-item {
+        padding: 4px 0;
+        width: 6.25vw;
+    }
+
+    .ant-space-item {
+        color: 'rgba(229, 229, 229, 1)'
+    }
 }

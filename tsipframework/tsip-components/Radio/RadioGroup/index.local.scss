@@ -26,5 +26,14 @@
 
     > label > span {
         font-weight: 400;
+        padding: 0 12px;
+    }
+
+    > label > span.ant-radio-button-checked {
+        border-top: 1px solid rgba(31, 198, 255, 1);
+    }
+
+    > label:not(:first-child) {
+        margin-left: 10px;
     }
 }

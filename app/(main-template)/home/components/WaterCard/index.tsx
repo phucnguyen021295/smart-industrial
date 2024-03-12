@@ -1,70 +1,40 @@
 'use client'
 
+import { memo } from 'react';
 import { Flex } from 'antd';
-import { Column } from '@ant-design/charts';
 
 // Components
 import Card from '@/ts-components/Card';
+import { ColumnChart } from '@/ts-components/Chart';
 
 // Styles
 import './index.local.scss';
 
-export default function WaterCard() {
+function WaterCard() {
     const data = [
-        {
-          type: 'T9',
-          value: 1500,
-        },
-        {
-          type: 'T10',
-          value: 3000,
-        },
-        {
-          type: 'T11',
-          value: 3500,
-        },
-        {
-          type: 'T12',
-          value: 4100,
-        },
-      ];
+      {
+        type: 'T9',
+        value: 1500,
+      },
+      {
+        type: 'T10',
+        value: 3000,
+      },
+      {
+        type: 'T11',
+        value: 3500,
+      },
+      {
+        type: 'T12',
+        value: 4100,
+      },
+    ];
 
-      const itemMax = data.reduce((prev, current) => (prev && prev.value > current.value) ? prev : current)
-      console.log(itemMax)
 
-      const paletteSemanticRed = '#1FC6FF';
-      const brandColor = '#FF9F1C';
-      const config = {
-        data,
-        xField: 'type',
-        yField: 'value',
-        height: 150,
-        seriesField: '',
-        color: ({ type }: any) => {
-        //   if (type === itemMax.type) {
-        //     return brandColor;
-        //   }
-    
-          return paletteSemanticRed;
-        },
-        label: {
-          content: (originData: any) => {
-            const val = parseFloat(originData.value);
-    
-            if (val < 0.05) {
-              return (val * 100).toFixed(1) + '%';
-            }
-          },
-          offset: 10,
-        },
-        legend: false,
-        xAxis: {
-          label: {
-            autoHide: true,
-            autoRotate: false,
-          },
-        },
-      };
+    const paletteSemanticRed = '#1FC6FF';
+    const config = {
+      color: paletteSemanticRed,
+    };
     return (
         <Card
             className="ts-home-water"
@@ -72,7 +42,7 @@ export default function WaterCard() {
         >
           <Flex justify="space-between">
             <div style={{width: '12.5vw'}}>
-             <Column {...config} />
+             <ColumnChart data={data} config={config} />
             </div>
             <Flex vertical className="ts-home-water-content">
               <span className="ts-home-water-content-subText">Tháng này</span>
@@ -85,3 +55,5 @@ export default function WaterCard() {
         </Card>
     );
 }
+
+export default memo(WaterCard)

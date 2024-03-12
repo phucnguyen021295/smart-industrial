@@ -24,10 +24,16 @@
     }
     &-title {
         padding-left: 8px;
-        @include Normal-SemiBold()
+        @include Normal-SemiBold();
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+                line-clamp: 1; 
+        -webkit-box-orient: vertical;
     }
     &-date {
         @include Small-SemiBold();
         color: rgba(166, 166, 166, 1);
+        padding-left: 4px;
     }
 }

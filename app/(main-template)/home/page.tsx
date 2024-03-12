@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react';
-import { Layout, Space } from 'antd';
+import { Flex, Layout, MenuProps, Space } from 'antd';
 import dynamic from 'next/dynamic';
 
 // Components
@@ -13,15 +13,23 @@ const WastewaterCard = dynamic(() => import('@/app/(main-template)/home/componen
 const PowerCard = dynamic(() => import('@/app/(main-template)/home/components/PowerCard'));
 const WaterCard = dynamic(() => import('@/app/(main-template)/home/components/WaterCard'));
 const LightCard = dynamic(() => import('@/app/(main-template)/home/components/LightCard'));
+const NewEventCard = dynamic(() => import('@/app/(main-template)/home/components/NewEventCard'));
 
 
 const MapGeo = dynamic(() => import('@/app/(main-template)/home/components/MapGeo'));
-const Card = dynamic(() => import('@/ts-components/Card'));
+
+const Select = dynamic(() => import('@/ts-components/Select'));
+
 const { Sider, Content } = Layout;
+
+const handleChange = (value: string) => {
+  console.log(`selected ${value}`);
+};
+
 
 function Home() {
   return (
-    <Layout style={{background: 'transparent', minHeight: '91vh'}}>
+    <Layout style={{background: 'transparent', minHeight: '92vh'}}>
         <Sider width={'23.7vw'} style={{paddingLeft: '1.25vw', background: 'transparent'}}>
           <Space direction="vertical" size={8} style={{ display: 'flex' }}>
               <EventDayCard />
@@ -30,15 +38,29 @@ function Home() {
               <AirMonitoringCard />
           </Space>
         </Sider>
-        <Content><MapGeo /></Content>
+        <Content>
+          {/* <MapGeo /> */}
+          <Flex justify={'center'}>
+            <Select
+              defaultValue="all"
+              style={{ width: '14.8vw' }}
+              onChange={handleChange}
+              options={[
+                { value: 'all', label: 'Tất cả các khu công nghiệp' },
+                { value: 'quangminh', label: 'Khu công nghiệp Quang Minh' },
+                { value: 'gialam', label: 'Khu công nghiệp Gia Lâm' },
+                { value: 'yenbai', label: 'Khu công nghiệp Yên Bái'},
+              ]}
+            />
+          </Flex>
+          
+        </Content>
         <Sider width={'23.7vw'} style={{background: 'transparent'}}>
           <Space direction="vertical" size={10} style={{ display: 'flex' }}>
             <PowerCard />
             <WaterCard />
             <LightCard />
-            <Card title={'Sự kiện mới'}>
-              Sự kiện mới
-            </Card>
+            <NewEventCard />
           </Space>
         </Sider>
     </Layout>

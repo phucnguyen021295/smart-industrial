@@ -17,7 +17,7 @@ export default function Time() {
     <Flex justify={'space-between'} align='center'>
         <Clock className={`t-sip-header-clock ${tomorrow.className}`} />
         <div className={'t-sip-header-clock-border'} />
-        <span className={'t-sip-header-date'}>{moment().format('dddd DD-MM-YYYY ')}</span>
+        <span className={'t-sip-header-date'}>{`Thứ sáu ${moment().format('DD-MM-YYYY ')}`}</span>
         <div className={'t-sip-header-clock-border'} />
         <div className={'t-sip-header-weather'}>32 ° C</div>
     </Flex>

@@ -1,7 +1,7 @@
-'use client'https://wirecloud.readthedocs.io/en/stable/
+'use client'
 
 import {memo} from 'react';
-import { Flex, List } from "antd";
+import { List, Space } from "antd";
 
 // Styles
 import './index.local.scss';
@@ -18,12 +18,11 @@ function Legend(props: Props) {
             dataSource={data}
             renderItem={(item) => (
                 <List.Item >
-                    <Flex align='center' justify='space-between'>
-                        <div>
-                            {item.label}
-                        </div>
-                        <span>{item.value}</span>
-                    </Flex>
+                    <Space>
+                        <div className='ts-components-chart-legend-dot' style={{backgroundColor: item.color}} />
+                        {item.label}
+                    </Space>
+                    <span style={{color: item.color}}>{item.value}</span>
                 </List.Item>
             )}
         />

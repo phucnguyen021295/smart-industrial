@@ -33,7 +33,7 @@ const MenuItem = React.memo(function MenuItem(props: MenuItemProps) {
     )
 })
 
-interface MenuProps {
+export interface MenuProps {
     items: MenuItemProps[],
 };
 

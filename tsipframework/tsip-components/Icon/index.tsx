@@ -1,6 +1,6 @@
 'use client'
 
-import React, { memo, lazy, Suspense } from 'react';
+import { memo } from 'react';
 import dynamic from 'next/dynamic';
 
 const Icons = {
@@ -11,6 +11,7 @@ const Icons = {
     ['warning']: dynamic(() => import('./images/warning')),
     ['event1']: dynamic(() => import('./images/event1')),
     ['radio']: dynamic(() => import('./images/radio')),
+    ['down']: dynamic(() => import('./images/down')),
 };
 
 const SIZE = {

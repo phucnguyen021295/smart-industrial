@@ -1,0 +1,17 @@
+.glg_wrapper {
+    position: relative;
+}
+
+.GlgCanvasContainer {
+    z-index: 100;
+}
+
+.scada-bottom {
+    width: 200px;
+    position: absolute;
+    background-color: rgb(0, 41, 58);
+    bottom: 1px;
+    right: 0;
+    height: 16px;
+    z-index: 200;
+}

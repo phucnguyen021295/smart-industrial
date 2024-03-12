@@ -3,6 +3,9 @@ import { PureComponent, ReactNode } from "react";
 
 import {GlgToolkit} from './GlgToolkit';
 
+// Styles
+import './index.local.scss'
+
 const getScript = (src: string) => {
     const script = document.createElement("script");
     script.src = src;
@@ -402,9 +405,11 @@ class Scada extends PureComponent<Props, {}> {
     var format = message_obj.GetSResource("Format");
     var action = message_obj.GetSResource("Action");
     // var subaction = message_obj.GetSResource( "SubAction" );
-    console.log('InputCallback', origin, format, action)
 
     if (format == "Button") {
+      var button = message_obj.GetDResource("Widget_id_6");
+
+      console.log('InputCallback', origin, format, action, button)
       if (action != "ValueChanged")
           return;
 
@@ -412,6 +417,8 @@ class Scada extends PureComponent<Props, {}> {
           (this.viewport.GetDResource("3DPipesToggle/OnState") != 0.0);
       var flow_lines_visible =
           (this.viewport.GetDResource("FlowToggle/OnState") != 0.0);
+
+        
 
       if (origin == "3DPipesToggle") {
           /* Make flow lines visible if both 3D pipes and flow lines were 
@@ -922,6 +929,7 @@ class Scada extends PureComponent<Props, {}> {
             <div id={`${id}-container`}>
                 <div id={`${id}-loader`}></div>
             </div>
+            <div className="scada-bottom" />
         </div>
       )
     }

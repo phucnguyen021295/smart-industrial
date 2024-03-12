@@ -99,6 +99,18 @@ const data: DataType[] = [
     numeral: "182.28m3/h",
     status: 1,
   },
+  {
+    key: "9",
+    name: "Flow out 2",
+    numeral: "167.28m3/h",
+    status: 1,
+  },
+  {
+    key: "10",
+    name: "Flow in 2",
+    numeral: "169.28m3/h",
+    status: 1,
+  },
 ];
 
 function WasteWaterOutCart() {

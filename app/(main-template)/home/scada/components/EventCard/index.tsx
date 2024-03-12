@@ -30,11 +30,9 @@ function EventCard() {
         <Card
             title={'Sự kiện'}
             paddingBody={'0.625vw'}
-            extra={
-                <Button type='text'><Icon name="dots-horizontal" size={'huge'} /></Button>
-            }
+            extra={<Button type='text'><Icon name="dots-horizontal" size={'huge'} /></Button> }
         >
-            <ListEvent data={data} key="eventCard" heightList={450} />
+            <ListEvent data={data} key="eventCard" heightList={460} />
         </Card>
     );
 }
